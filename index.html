@@ -154,6 +154,16 @@
 			padding-bottom: 40px;
 			border-bottom: 2px solid #1D2951;
 		}
+		/*   FACTS SECTION   */
+		#bookFacts {
+			width: 100%;
+			font-size: 18px;
+			line-height: 24px;
+			font-style: italic;
+			text-align: justify;
+			background-color: #1D2951;
+			padding: 20px 20px 40px 20px;
+		}
 		/*   RESPONSIVE   */
 		@media only screen and (max-width: 400px) { .grids { grid-template-columns: 1fr; } }
 		@media only screen and (min-width: 560px) {
@@ -252,6 +262,7 @@
 			</div>
 		</div>
 	</main>
+	<footer id="bookFacts"></footer>
 	<script src="cartloader.js"></script>
 	<script>
 		showAllIn('All');
@@ -310,6 +321,26 @@
 			}
 			x.className = a.join(" ");
 		}
+		/*   FACTS GENERATOR   */
+		var r_txt = [ "Did you know? The fear of running out of something to read is called Abibliophobia",
+					  "Did you know? The world’s smallest book is Teeny Ted from Turnip Town",
+					  "Did you know? There are four law books bound in human skin at the Harvard University Library",
+					  "Did you know? Fact has it that former American President Theodore Roosevelt read one book a day",
+					  "Did you know? People say the longest sentence to ever be printed in literature belongs to Victor Hugo. The claim is that in Les Misérables there is a sentence which is 823 words long",
+					  "Did you know? 1 in 5 adults around the world cannot read or write",
+					  "Did you know? Up to 50 books can be made from 1 tree",
+					  "Did you know? Copies of pulped Mills and Boon novels were used to build part of the M6 toll road",
+					  "Did you know? The most expensive book in the world is Codex Leicester by Leonardo Da Vinci. It was purchased by Bill Gates for 30.8 million dollars",
+					  "Did you know? A study found that you are 2 ½ times less likely to be diagnosed with Alzheimer’s in later life if you read regularly",
+					  "Did you know? To write a novel, it takes around 475 hours.",
+					  "Did you know? Mark Twain’s, Adventure of Tom Sawyer is said to be the first novel written on a typewriter",
+					  "Did you know? There is an actual word for loving the smell of old books, it’s Bibliosmia",
+					  "Did you know? The author of Peter Pan, J.M. Barrie gave the rights of this book to Great Ormond Street Hospital",
+					  "Did you know? On estimate, there are over 900,000 new books published each year",
+					  "Did you know? The earliest known written existence of the word ‘book’ is in a book by Alfred the Great",
+					  "Did you know? Lord of the Ring author, J.R.R Tolkien typed the whole trilogy with just two fingers!" ];
+		var l = Math.floor(r_txt.length * Math.random());
+		_e("bookFacts").innerHTML=r_txt[l];
 		function _e(id) { return document.getElementById(id); }
 	</script>
 </body>
