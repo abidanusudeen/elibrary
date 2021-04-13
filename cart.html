@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Homepage </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" >
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="canonical" href="/" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<style>
+		/* RESET STYLESHEET */
+		html,body,div,p,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,button,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,a,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent;text-decoration:none;}
+		body{line-height:1;}
+		article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+		nav ul, ul, li{list-style:none;}
+		img {pointer-events:none;}
+		blockquote,q{quotes:none;}
+		blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+		ins{background-color:#FF9;color:#111;text-decoration:none;}
+		mark{background-color:#FF9;color:#111;font-style:italic;font-weight:bold;}
+		del{text-decoration:line-through;}
+		abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+		table{border-collapse:collapse;border-spacing:0;}
+		hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}
+		input,select{vertical-align:middle;}
+		/* MY CODE */
+		html { scroll-behavior: smooth; }
+		* { width: 100%; color: #F0FFFF; outline: none; font-weight: 900; text-decoration: none; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+		body { user-select: none; background: #F0FFFF; }
+		/*   HEADINGS & ICONS   */
+		header {
+			padding: 12px 0 0 0;
+			background: #000080;
+			border-bottom: 2px solid #1D2951;
+		}
+		.icon {
+			font-size: 16px;
+			display: inline-block;
+			cursor: pointer;
+			width: fit-content;
+			color: #000080;
+		}
+		.icon1, .hname, .icon2 {
+			font-size: 28px;
+			padding-bottom: 12px;
+			display: inline-block;
+		}
+		.icon1, .icon2 {
+			top: 0;
+			z-index: 10;
+			cursor: pointer;
+			padding: 0px 12px;
+			position: absolute;
+			width: fit-content;
+		}
+		.icon1 { left: 0; }
+		.icon2 { right: 0; }
+		.hname {
+			position: relative;
+			text-align: center;
+		}
+		.icon2 span {
+			top: 14px;
+			right: 20px;
+			font-size: 16px;
+			position: absolute;
+		}
+		/*   MAIN   */
+		main { padding: 40px 20px; }
+		/*   PRODUCT   */
+		.products-container div, .products-container h5 { color: #000080; }
+		.product-header, .containers {
+			display: flex;
+			padding: 20px 0;
+			border-bottom: 2px solid #1D2581;
+		}
+		.product-header h5 { font-size: 18px; }
+		.product-title { width: 40%; }
+		.price, .quantity, .total {
+			width: 20%;
+			text-align: center;
+		}
+		.containers img {
+			height: 50px;
+			display: block;
+		}
+		.fullTotal {
+			font-size: 28px;
+			padding-top: 40px;
+			text-align: right;
+		}
+		/*   RESPONSIVE   */
+	</style>
+</head>
+<body>
+	<header>
+		<div class="hname"> e-Library
+			<div class="icon1"> <a href="index.html"> <i class="fas fa-chevron-circle-left"></i> </a> </div>
+			<div class="icon2"> <a href="cart.html"> <i class="fas fa-shopping-cart"></i> <span> 0 </span> </a> </div>
+		</div>
+	</header>
+	<main>
+		<div class="products-container">
+			<div class="product-header">
+				<h5 class="product-title"> TITLE </h5>
+				<h5 class="price"> PRICE </h5>
+				<h5 class="quantity"> QTY </h5>
+				<h5 class="total"> TOTAL </h5>
+			</div>
+			<div class="products"></div>
+		</div>
+	</main>
+	<script src="cartloader.js"></script>
+</body>
+</html>

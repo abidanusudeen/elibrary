@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Homepage </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" >
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="canonical" href="/" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<style>
+		/* RESET STYLESHEET */
+		html,body,div,p,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,button,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,a,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent;text-decoration:none;}
+		body{line-height:1;}
+		article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+		nav ul, ul, li{list-style:none;}
+		img {pointer-events:none;}
+		blockquote,q{quotes:none;}
+		blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+		ins{background-color:#FF9;color:#111;text-decoration:none;}
+		mark{background-color:#FF9;color:#111;font-style:italic;font-weight:bold;}
+		del{text-decoration:line-through;}
+		abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+		table{border-collapse:collapse;border-spacing:0;}
+		hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}
+		input,select{vertical-align:middle;}
+		/* MY CODE */
+		html { scroll-behavior: smooth; }
+		* { width: 100%; color: #F0FFFF; outline: none; font-weight: 900; text-decoration: none; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+		body { user-select: none; background: #F0FFFF; }
+		/*   HEADINGS & ICONS   */
+		header {
+			padding: 12px 0 0 0;
+			background: #000080;
+			border-bottom: 2px solid #1D2951;
+		}
+		.icon1, .hname, .icon2 {
+			font-size: 28px;
+			padding-bottom: 12px;
+			display: inline-block;
+		}
+		.icon1, .icon2 {
+			top: 0;
+			z-index: 10;
+			cursor: pointer;
+			padding: 0px 12px;
+			position: absolute;
+			width: fit-content;
+		}
+		.icon1 { left: 0; }
+		.icon2 { right: 0; }
+		.hname {
+			position: relative;
+			text-align: center;
+		}
+		.icon2 span {
+			top: 14px;
+			right: 20px;
+			font-size: 16px;
+			position: absolute;
+		}
+		/*   SEARCH BAR   */
+		#search-input, #sbutton {
+			color: #000;
+			font-size: 16px;
+			padding: 10px 20px;
+			border-radius: 50px;
+			margin: 0 0 10px 10px;
+			width: calc(100% - 24px);
+			border: 2px solid #0080FF;
+		}
+		#sbutton {
+			top: 52px;
+			right: 14px;
+			color: #FFF;
+			width: 44px;
+			height: 44px;
+			padding: 10px 5px;
+			position: absolute;
+			background: #73C2FB;
+		}
+		/*   NAVBAR   */
+		#nav {
+			display: none;
+			background: #0080FF;
+			border-top: 2px solid #1D2951;
+		}
+		#nav ul li {
+			width: 100%;
+			display: block;
+			line-height: 40px;
+		}
+		#nav ul li a {
+			display: block;
+			line-height: 20px;
+			padding: 10px 15px;
+		}
+		#nav ul li a:hover, #nav ul li a:active { background: #00F; }
+		/*   MAIN   */
+		main { padding: 40px 20px; }
+		/*   GRIDS   */
+		.grids {
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: 1fr 1fr;
+		}
+		.cells {
+			display: none;
+			background: #73C2FB;
+			box-shadow: 10px 10px 10px rgba(0,0,0,0.35);
+		}
+		.show { display: block; }
+		/*   BOOK FORMAT   */
+		.image{
+			background-size: cover;
+			border-bottom: 2px solid #306EFF;
+		}
+		.image img {
+			height: 300px;
+			display: block;
+			object-fit: cover;
+		}
+		.title {
+			display: flex;
+			padding: 10px;
+			font-size: 18px;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+		}
+		.desc { padding-left: 20px; }
+		.view {
+			padding: 10px;
+			text-align: center;
+		}
+		.view button {
+			width: 80%;
+			height: 40px;
+			font-size: 18px;
+			line-height: 40px;
+			border-radius: 25px;
+			background-color: #306EFF;
+			box-shadow: 5px 5px 5px rgba(0,0,0,0.35);
+		}
+		.view button:hover { background: #000080; }
+		.view button a {
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+		}
+		/*   FAILED SEARCH   */
+		#p {
+			color: #000;
+			display: none;
+			margin-bottom: 40px;
+			padding-bottom: 40px;
+			border-bottom: 2px solid #1D2951;
+		}
+		/*   RESPONSIVE   */
+		@media only screen and (max-width: 400px) { .grids { grid-template-columns: 1fr; } }
+		@media only screen and (min-width: 560px) {
+			.hname {
+				text-align: left;
+				padding-left: 60px;
+			}
+			.icon2 span { right: -2px; }
+			#search-input {
+				top: 0;
+				width: 45%;
+				right: 60px;
+				margin-top: 5.5px;
+				position: absolute;
+			}
+			#sbutton {
+				top: 0;
+				right: 60px;
+				margin-top: 5.5px;
+			}
+			.grids { grid-template-columns: 1fr 1fr 1fr; }
+		}
+		@media only screen and (min-width: 780px) { .grids { grid-template-columns: 1fr 1fr 1fr 1fr; } }
+		@media only screen and (min-width: 1000px) { .grids { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; } }
+		@media only screen and (min-width: 1250px) { .grids { grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; } }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="hname"> e-Library
+			<div class="icon1" onclick="showNav()">  <i class="fa fa-bars"></i>  </div>
+			<div class="icon2"> <a href="cart.html"> <i class="fas fa-shopping-cart"></i> <span> 0 </span> </a> </div>
+		</div>
+		<input type="search" id="search-input" placeholder="Search">
+		<button id="sbutton" onclick="searched()"> <i class="fas fa-search"></i> </button>
+		<nav id="nav">
+			<ul>
+				<li>  <a id="navClick" onclick="showAllIn('All')"> ALL BOOKS </a>  </li>
+				<li>  <a id="navClick" onclick="showAllIn('Fiction')"> FICTION </a>  </li>
+				<li>  <a id="navClick" onclick="showAllIn('Nonfiction')"> NON-FICTION </a>  </li>
+				<li>  <a id="navClick" onclick="showAllIn('Scifi')"> SCI-FI </a>  </li>
+				<li>  <a id="navClick" onclick="showAllIn('Mystery')"> MYSTERY </a>  </li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<p id="p"> Sorry, the book that you were looking for could not be found <br> Please consider looking through the books provided </p>
+		<div class="grids">
+			<div class="cells Scifi">
+				<div class="image"> <img src="c01.jpeg"> </div>
+				<div class="title">THE MARTIAN</div>
+				<div class="desc"> Andy Weir <br><br> Rs. 750 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+			<div class="cells Fiction">
+				<div class="image"> <img src="c02.jpeg"> </div>
+				<div class="title">INVISIBLE MAN</div>
+				<div class="desc"> Ralph Ellison <br><br> Rs. 360 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+			<div class="cells Mystery">
+				<div class="image"> <img src="c03.jpeg"> </div>
+				<div class="title">THE ALIENIST</div>
+				<div class="desc"> Caleb Carr <br><br> Rs. 450 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+			<div class="cells Nonfiction">
+				<div class="image"> <img src="c04.jpeg"> </div>
+				<div class="title">BECOMING</div>
+				<div class="desc"> Michelle Obama <br><br> Rs. 628 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+			<div class="cells Nonfiction">
+				<div class="image"> <img src="c05.jpeg"> </div>
+				<div class="title">HIROSHIMA</div>
+				<div class="desc"> John Hersey <br><br> Rs. 265 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+			<div class="cells Mystery">
+				<div class="image"> <img src="c06.jpeg"> </div>
+				<div class="title">GONE GIRL</div>
+				<div class="desc"> Gillian Flynn <br><br> Rs. 280 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+			<div class="cells Scifi">
+				<div class="image"> <img src="c07.jpeg"> </div>
+				<div class="title">DUNE</div>
+				<div class="desc"> Frank Herbert <br><br> Rs. 288 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+			<div class="cells Fiction">
+				<div class="image"> <img src="c08.jpeg"> </div>
+				<div class="title">THE ALCHEMIST</div>
+				<div class="desc"> Paulo Coelho <br><br> Rs. 229 </div>
+				<div class="view"> <button class="addToCart"> <a> Add to Cart </a> </button> </div>
+			</div>
+		</div>
+	</main>
+	<script src="cartloader.js"></script>
+	<script>
+		showAllIn('All');
+		_e("nav").style.display = "none";
+		/*   NAVBAR   */
+		function showNav() {
+			if(_e("nav").style.display == "block") { _e("nav").style.display = "none"; }
+			else { _e("nav").style.display = "block"; }
+		}
+		/*   SEARCH BAR   */
+		function searched() {
+			var i, j=0;
+			var a = _e("search-input").value;
+			if(a == "") {
+				showAllIn('All');
+				_e("nav").style.display = "none";
+			}
+			var b = document.getElementsByClassName("title");
+			var c = document.getElementsByClassName("cells");
+			for(i = 0; i < b.length; i++) {
+				if(b[i].innerHTML.toLowerCase().includes(a.toLowerCase())) { j++; addShow(c[i], "show"); }
+				else { removeShow(c[i], "show"); }
+			}
+			if(j == 0) {
+				_e("p").style.display = "block" ;
+				showAllIn('All');
+				_e("nav").style.display = "none";
+			}
+			else { _e("p").style.display = "none"; }
+		}
+		/*   CATEGORIES   */
+		function showAllIn(genre) {
+			var a, i;
+			a = document.getElementsByClassName("cells");
+			if(genre == 'All') { genre = "" };
+			for(i = 0; i < a.length; i++) {
+				removeShow(a[i], "show");
+				if(a[i].className.indexOf(genre) > -1) { addShow(a[i], "show"); }
+			}
+			showNav();
+		}
+		function addShow(x, y) {
+			var a, b, i;
+			a = x.className.split(" ");
+			b = y.split(" ");
+			for(i = 0; i < b.length; i++) {
+				if(a.indexOf(b[i]) == -1) { x.className += " " + b[i]; }
+			}
+		}
+		function removeShow(x, y) {
+			var a, b, i;
+			a = x.className.split(" ");
+			b = y.split(" ");
+			for(i = 0; i < b.length; i++) {
+				while(a.indexOf(b[i]) > -1) { a.splice(a.indexOf(b[i])); }
+			}
+			x.className = a.join(" ");
+		}
+		function _e(id) { return document.getElementById(id); }
+	</script>
+</body>
+</html>
